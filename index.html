@@ -91,14 +91,16 @@
           <a href="logshack-field/privacy.html" data-l="en" hidden>Privacy policy</a>
         </div>
       </div>
-      <!-- Due schermate dell'app, nella lingua scelta. -->
+      <!-- Tre schermate dell'app, nella lingua scelta: un clic le ingrandisce. -->
       <div class="telefoni" data-l="it">
-        <img class="telefono dietro" src="img/schermate/bussola-it.webp" width="480" height="853" alt="LogShack Field: la bussola verso il corrispondente" loading="lazy">
-        <img class="telefono davanti" src="img/schermate/cluster-it.webp" width="480" height="853" alt="LogShack Field: il cluster DX sulla mappa, con l'avviso di stazione già nel log" loading="lazy">
+        <button type="button" class="telefono sinistra" data-grande="img/schermate/bussola-it-grande.webp" aria-label="Ingrandisci: la bussola verso il corrispondente"><img src="img/schermate/bussola-it.webp" width="480" height="853" alt="Ingrandisci: la bussola verso il corrispondente" loading="lazy"></button>
+        <button type="button" class="telefono destra" data-grande="img/schermate/bande-it-grande.webp" aria-label="Ingrandisci: come vanno le bande"><img src="img/schermate/bande-it.webp" width="480" height="853" alt="Ingrandisci: come vanno le bande" loading="lazy"></button>
+        <button type="button" class="telefono centro" data-grande="img/schermate/cluster-it-grande.webp" aria-label="Ingrandisci: il cluster DX sulla mappa, con l'avviso di stazione già nel log"><img src="img/schermate/cluster-it.webp" width="480" height="853" alt="Ingrandisci: il cluster DX sulla mappa, con l'avviso di stazione già nel log" loading="lazy"></button>
       </div>
       <div class="telefoni" data-l="en" hidden>
-        <img class="telefono dietro" src="img/schermate/bussola-en.webp" width="480" height="853" alt="LogShack Field: the compass pointing to the other station" loading="lazy">
-        <img class="telefono davanti" src="img/schermate/cluster-en.webp" width="480" height="853" alt="LogShack Field: the DX cluster on a map, with the already-worked warning" loading="lazy">
+        <button type="button" class="telefono sinistra" data-grande="img/schermate/bussola-en-grande.webp" aria-label="Enlarge: the compass pointing to the other station"><img src="img/schermate/bussola-en.webp" width="480" height="853" alt="Enlarge: the compass pointing to the other station" loading="lazy"></button>
+        <button type="button" class="telefono destra" data-grande="img/schermate/bande-en-grande.webp" aria-label="Enlarge: band conditions"><img src="img/schermate/bande-en.webp" width="480" height="853" alt="Enlarge: band conditions" loading="lazy"></button>
+        <button type="button" class="telefono centro" data-grande="img/schermate/cluster-en-grande.webp" aria-label="Enlarge: the DX cluster on a map, with the already-worked warning"><img src="img/schermate/cluster-en.webp" width="480" height="853" alt="Enlarge: the DX cluster on a map, with the already-worked warning" loading="lazy"></button>
       </div>
     </section>
 
@@ -149,6 +151,11 @@
     </section>
   </main>
 
+  <dialog class="visore" id="visore">
+    <img src="" alt="">
+    <button type="button" class="chiudi" aria-label="Chiudi / Close">✕</button>
+  </dialog>
+
   <footer class="piede">
     <p>© 2026 Metanoia Studio - IU3VTV</p>
     <p><span data-l="it">Scrivici:</span><span data-l="en" hidden>Contact:</span> <a href="mailto:metanoiastudio.dev@gmail.com">metanoiastudio.dev@gmail.com</a></p>
@@ -157,6 +164,19 @@
   </footer>
 </div>
 <script>
+  // Schermate: un clic le apre grandi; si chiude con ✕, con Esc o cliccando fuori.
+  (function () {
+    var v = document.getElementById("visore"), im = v.querySelector("img");
+    document.querySelectorAll(".telefono").forEach(function (t) {
+      t.addEventListener("click", function () {
+        im.src = t.getAttribute("data-grande");
+        im.alt = t.querySelector("img").alt;
+        v.showModal();
+      });
+    });
+    v.addEventListener("click", function (e) { if (e.target !== im) v.close(); });
+  })();
+
   // La QSL porta la data e l'ora UTC di chi visita: il "collegamento" è adesso.
   (function () {
     var n = new Date(), p = function (x) { return String(x).padStart(2, "0"); };

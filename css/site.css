@@ -106,16 +106,34 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nota strong { color: var(--lanterna-tenue); }
 
-/* Le schermate di LogShack Field, come due telefoni appoggiati uno sull'altro */
-.app.con-telefoni { grid-template-columns: 200px 1fr 300px; }
+/* Le schermate di LogShack Field: tre telefoni appoggiati uno sull'altro. Un clic li ingrandisce. */
+.app.con-telefoni { grid-template-columns: 200px 1fr 340px; }
 .telefoni { position: relative; height: 470px; }
 .telefono {
-  position: absolute; width: 215px; height: auto;
-  border: 7px solid #1d2b47; border-radius: 24px;
+  position: absolute; width: 190px; padding: 0; cursor: zoom-in;
+  background: #1d2b47; border: 6px solid #1d2b47; border-radius: 22px;
   box-shadow: 0 16px 34px rgba(0,0,0,.5);
+  transition: transform .2s ease;
 }
-.telefono.dietro { left: 0; top: 46px; transform: rotate(-6deg); opacity: .9; }
-.telefono.davanti { right: 0; top: 0; transform: rotate(3deg); }
+.telefono img { border-radius: 16px; }
+.telefono.sinistra { left: 0; top: 56px; transform: rotate(-7deg); z-index: 1; }
+.telefono.destra { right: 0; top: 56px; transform: rotate(7deg); z-index: 1; }
+.telefono.centro { left: 75px; top: 0; z-index: 2; }
+.telefono:hover, .telefono:focus-visible { z-index: 3; }
+.telefono.sinistra:hover { transform: rotate(-7deg) translateY(-8px); }
+.telefono.destra:hover { transform: rotate(7deg) translateY(-8px); }
+.telefono.centro:hover { transform: translateY(-8px); }
+
+/* Il visore: la schermata grande sopra la pagina */
+.visore {
+  padding: 0; border: none; background: none; max-width: 94vw; max-height: 94vh; overflow: visible;
+}
+.visore::backdrop { background: rgba(8, 14, 28, .85); }
+.visore img { max-height: 90vh; max-width: 90vw; width: auto; border-radius: 18px; border: 6px solid #1d2b47; box-shadow: 0 20px 50px rgba(0,0,0,.6); }
+.visore .chiudi {
+  position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%;
+  border: none; background: var(--lanterna); color: var(--inchiostro); font: 700 20px var(--corpo); cursor: pointer;
+}
 
 /* Sostieni: un ritaglio di cartolina, più piccolo della QSL in apertura */
 .sostieni {
@@ -150,10 +168,14 @@ img { max-width: 100%; height: auto; display: block; }
   .apertura { grid-template-columns: 1fr; gap: 36px; padding: 20px 0 56px; }
   .qsl { transform: rotate(-1.5deg); }
   .app, .app.con-telefoni { grid-template-columns: 1fr; gap: 18px; padding: 44px 0; }
-  .telefoni { height: auto; display: flex; justify-content: center; gap: 14px; margin-top: 12px; }
-  .telefono { position: static; width: 46%; max-width: 215px; border-width: 5px; border-radius: 18px; }
-  .telefono.dietro { transform: rotate(-3deg); margin-top: 24px; opacity: 1; }
-  .telefono.davanti { transform: rotate(2deg); }
+  .telefoni { height: auto; display: flex; justify-content: center; margin: 12px 0 34px; }
+  .telefono { position: relative; left: auto; right: auto; top: auto; width: 36%; max-width: 190px; border-width: 4px; border-radius: 16px; }
+  .telefono img { border-radius: 12px; }
+  .telefono.sinistra { margin-right: -6%; margin-top: 26px; }
+  .telefono.destra { margin-left: -6%; margin-top: 26px; }
+  .telefono.sinistra { order: 1; }
+  .telefono.centro { left: auto; order: 2; }
+  .telefono.destra { order: 3; }
   .app-logo { width: 140px; }
   .funzioni { grid-template-columns: 1fr; }
   .sostieni { grid-template-columns: 1fr; padding: 24px 22px; }
