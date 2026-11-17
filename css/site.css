@@ -106,6 +106,21 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nota strong { color: var(--lanterna-tenue); }
 
+/* Sostieni: un ritaglio di cartolina, più piccolo della QSL in apertura */
+.sostieni {
+  display: grid; grid-template-columns: 1fr auto; gap: 28px 48px; align-items: center;
+  margin: 8px 0 64px; padding: 30px 34px; border-radius: 6px;
+  background: var(--tela); color: var(--inchiostro);
+  border-left: 8px solid var(--lanterna);
+  box-shadow: 0 14px 32px rgba(0,0,0,.35);
+}
+.sostieni h2 { font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; margin: 0 0 10px; }
+.sostieni-testo p { margin: 0; max-width: 36em; }
+.sostieni-azione { text-align: center; }
+.sostieni .bottone { font-size: 19px; padding: 13px 24px; }
+.sostieni .bottone:hover { background: var(--inchiostro); color: var(--tela); }
+.sostieni-firma { font-family: var(--display); font-weight: 600; font-size: 18px; margin: 10px 0 0; }
+
 /* Piede */
 .piede { border-top: 1px solid var(--linea); padding: 32px 0 48px; color: var(--nebbia); font-size: 16px; display: flex; flex-wrap: wrap; gap: 12px 40px; justify-content: space-between; }
 .piede p { margin: 0; }
@@ -126,6 +141,8 @@ img { max-width: 100%; height: auto; display: block; }
   .app { grid-template-columns: 1fr; gap: 18px; padding: 44px 0; }
   .app-logo { width: 140px; }
   .funzioni { grid-template-columns: 1fr; }
+  .sostieni { grid-template-columns: 1fr; padding: 24px 22px; }
+  .sostieni-azione { text-align: left; }
 }
 @media (max-width: 420px) {
   body { font-size: 17px; }
