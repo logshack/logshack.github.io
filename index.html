@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LogShack — log per radioamatori</title>
+<meta name="titolo-it" content="LogShack — log per radioamatori">
+<meta name="titolo-en" content="LogShack — ham radio logging">
+<meta name="description" content="LogShack e LogShack Field: il log per radioamatori, sul computer di casa e sul telefono in portatile. / Ham radio logging at home and in the field.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/lingua.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <a class="marchio" href="./">LogShack</a>
+    <nav class="lingue" aria-label="Lingua / Language">
+      <button type="button" data-set="it" aria-pressed="true">IT</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="apertura">
+      <div>
+        <h1 data-l="it">Il log per chi fa radio, in stazione e sul campo.</h1>
+        <h1 data-l="en" hidden>The log for radio amateurs, in the shack and in the field.</h1>
+        <p data-l="it">LogShack sul computer di casa, LogShack Field sul telefono quando sei in portatile. I QSO passano dall'uno all'altro con un tocco, sulla rete di casa.</p>
+        <p data-l="en" hidden>LogShack on your home computer, LogShack Field on your phone when you're portable. Your QSOs move from one to the other with a tap, over your home network.</p>
+      </div>
+
+      <!-- La cartolina QSL: il "grazie per il collegamento" dei radioamatori. -->
+      <figure class="qsl" aria-label="QSL">
+        <div class="qsl-testa">
+          <div>
+            <p class="qsl-call">IU3VTV</p>
+            <p class="qsl-sotto" data-l="it">Metanoia Studio, Italia</p>
+            <p class="qsl-sotto" data-l="en" hidden>Metanoia Studio, Italy</p>
+          </div>
+          <img class="qsl-timbro" src="img/logshack-field.png" alt="">
+        </div>
+        <p class="qsl-a"><span data-l="it">Alla stazione</span><span data-l="en" hidden>To radio</span> <strong data-l="it">che legge</strong><strong data-l="en" hidden>reading this</strong></p>
+        <table>
+          <thead><tr><th data-l="it">Data</th><th data-l="en" hidden>Date</th><th>UTC</th><th>MHz</th><th data-l="it">Modo</th><th data-l="en" hidden>Mode</th><th>RST</th></tr></thead>
+          <tbody><tr><td id="qsl-data">2026</td><td id="qsl-utc">—</td><td>14.250</td><td>SSB</td><td>59</td></tr></tbody>
+        </table>
+        <div class="qsl-firma">
+          <span data-l="it">Grazie per il QSO</span><span data-l="en" hidden>Thanks for the QSO</span>
+          <em>73!</em>
+        </div>
+      </figure>
+    </section>
+
+    <section class="app" id="logshack-field">
+      <img class="app-logo" src="img/logshack-field.png" alt="LogShack Field">
+      <div>
+        <h2>LogShack Field</h2>
+        <p class="dove" data-l="it">Android, telefono e tablet. Gratuito.</p>
+        <p class="dove" data-l="en" hidden>Android, phone and tablet. Free.</p>
+        <p data-l="it">Per le attivazioni POTA, SOTA e WWFF, i contest in portatile, le uscite in montagna o la radio in giardino. Funziona anche dove non c'è campo.</p>
+        <p data-l="en" hidden>For POTA, SOTA and WWFF activations, portable contests, mountain trips or the radio in the garden. Works where there's no coverage, too.</p>
+        <ul class="funzioni" data-l="it">
+          <li>QSO in un tocco, con ora UTC e banda automatiche</li>
+          <li>Ricerca del nominativo su QRZ.com e HamQTH</li>
+          <li>Riferimenti POTA, SOTA, WWFF e IOTA</li>
+          <li>Spot DX e attivatori in onda, sulla mappa</li>
+          <li>Avviso se una stazione è già nel log</li>
+          <li>Bussola: dove girare l'antenna e a che distanza</li>
+          <li>Propagazione e calendario dei contest</li>
+          <li>File ADIF e sincronizzazione con LogShack</li>
+        </ul>
+        <ul class="funzioni" data-l="en" hidden>
+          <li>One-tap QSOs, with automatic UTC time and band</li>
+          <li>Callsign lookup on QRZ.com and HamQTH</li>
+          <li>POTA, SOTA, WWFF and IOTA references</li>
+          <li>DX spots and activators on air, on a map</li>
+          <li>Warning when a station is already in your log</li>
+          <li>Compass: where to point the antenna, and how far</li>
+          <li>Propagation and contest calendar</li>
+          <li>ADIF files and sync with LogShack</li>
+        </ul>
+        <div class="azioni">
+          <span class="bottone spento" data-l="it">In arrivo su Google Play</span>
+          <span class="bottone spento" data-l="en" hidden>Coming soon to Google Play</span>
+          <a href="logshack-field/privacy.html" data-l="it">Informativa sulla privacy</a>
+          <a href="logshack-field/privacy.html" data-l="en" hidden>Privacy policy</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="app" id="logshack">
+      <img class="app-logo" src="img/logshack.png" alt="LogShack">
+      <div>
+        <h2>LogShack</h2>
+        <p class="dove" data-l="it">Mac e Windows, per la stazione di casa</p>
+        <p class="dove" data-l="en" hidden>Mac and Windows, for your home station</p>
+        <p data-l="it">Il log completo della stazione: legge frequenza e modo dalla radio, mostra gli spot sulla mappa e tiene il conto dei diplomi.</p>
+        <p data-l="en" hidden>The complete station log: it reads frequency and mode from your radio, shows spots on the map and keeps track of your awards.</p>
+        <ul class="funzioni" data-l="it">
+          <li>Controllo della radio (CAT) con Hamlib</li>
+          <li>Spot DX, POTA, SOTA, WWFF e IOTA sulla mappa</li>
+          <li>Conferme LoTW, eQSL e Logbook di QRZ</li>
+          <li>Log automatico da WSJT-X</li>
+          <li>Diplomi DXCC e WAZ</li>
+          <li>Propagazione, contest, radar meteo</li>
+        </ul>
+        <ul class="funzioni" data-l="en" hidden>
+          <li>Radio control (CAT) through Hamlib</li>
+          <li>DX, POTA, SOTA, WWFF and IOTA spots on the map</li>
+          <li>LoTW, eQSL and QRZ Logbook confirmations</li>
+          <li>Automatic logging from WSJT-X</li>
+          <li>DXCC and WAZ awards</li>
+          <li>Propagation, contests, weather radar</li>
+        </ul>
+        <p class="nota" data-l="it"><strong>In preparazione: LogShack Pro.</strong> La tua stazione di casa dal telefono, ovunque tu sia: cambi frequenza, ascolti e parli, con LogShack Field.</p>
+        <p class="nota" data-l="en" hidden><strong>In the works: LogShack Pro.</strong> Your home station on your phone, wherever you are: change frequency, listen and talk, with LogShack Field.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="piede">
+    <p>© 2026 Metanoia Studio - IU3VTV</p>
+    <p><span data-l="it">Scrivici:</span><span data-l="en" hidden>Contact:</span> <a href="mailto:metanoiastudio.dev@gmail.com">metanoiastudio.dev@gmail.com</a></p>
+    <p><a href="logshack-field/privacy.html" data-l="it">Privacy di LogShack Field</a><a href="logshack-field/privacy.html" data-l="en" hidden>LogShack Field privacy</a></p>
+  </footer>
+</div>
+<script>
+  // La QSL porta la data e l'ora UTC di chi visita: il "collegamento" è adesso.
+  (function () {
+    var n = new Date(), p = function (x) { return String(x).padStart(2, "0"); };
+    document.getElementById("qsl-data").textContent = p(n.getUTCDate()) + "/" + p(n.getUTCMonth() + 1) + "/" + n.getUTCFullYear();
+    document.getElementById("qsl-utc").textContent = p(n.getUTCHours()) + p(n.getUTCMinutes());
+  })();
+</script>
+</body>
+</html>
