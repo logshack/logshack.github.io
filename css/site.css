@@ -96,6 +96,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .bottone:hover { background: var(--lanterna-tenue); color: var(--inchiostro); }
 .bottone.spento { background: none; color: var(--nebbia); border: 1px dashed var(--linea); cursor: default; }
+.lavori {
+  display: inline-block; margin: 0 0 18px; padding: 8px 14px; border-radius: 8px;
+  border: 1px dashed var(--lanterna); color: var(--testo); font-size: 17px; max-width: 38em;
+}
 .nota {
   margin: 24px 0 0; padding: 16px 18px; border-left: 3px solid var(--lanterna);
   background: var(--notte-alta); border-radius: 0 8px 8px 0; max-width: 40em; font-size: 17px;
