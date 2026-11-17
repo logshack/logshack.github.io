@@ -106,6 +106,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .nota strong { color: var(--lanterna-tenue); }
 
+/* Le schermate di LogShack Field, come due telefoni appoggiati uno sull'altro */
+.app.con-telefoni { grid-template-columns: 200px 1fr 300px; }
+.telefoni { position: relative; height: 470px; }
+.telefono {
+  position: absolute; width: 215px; height: auto;
+  border: 7px solid #1d2b47; border-radius: 24px;
+  box-shadow: 0 16px 34px rgba(0,0,0,.5);
+}
+.telefono.dietro { left: 0; top: 46px; transform: rotate(-6deg); opacity: .9; }
+.telefono.davanti { right: 0; top: 0; transform: rotate(3deg); }
+
 /* Sostieni: un ritaglio di cartolina, più piccolo della QSL in apertura */
 .sostieni {
   display: grid; grid-template-columns: 1fr auto; gap: 28px 48px; align-items: center;
@@ -138,7 +149,11 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 820px) {
   .apertura { grid-template-columns: 1fr; gap: 36px; padding: 20px 0 56px; }
   .qsl { transform: rotate(-1.5deg); }
-  .app { grid-template-columns: 1fr; gap: 18px; padding: 44px 0; }
+  .app, .app.con-telefoni { grid-template-columns: 1fr; gap: 18px; padding: 44px 0; }
+  .telefoni { height: auto; display: flex; justify-content: center; gap: 14px; margin-top: 12px; }
+  .telefono { position: static; width: 46%; max-width: 215px; border-width: 5px; border-radius: 18px; }
+  .telefono.dietro { transform: rotate(-3deg); margin-top: 24px; opacity: 1; }
+  .telefono.davanti { transform: rotate(2deg); }
   .app-logo { width: 140px; }
   .funzioni { grid-template-columns: 1fr; }
   .sostieni { grid-template-columns: 1fr; padding: 24px 22px; }
